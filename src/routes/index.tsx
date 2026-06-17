@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import logoAsset from "@/assets/logo.asset.json";
 import heroCad from "@/assets/hero-cad.png";
 import designSketch from "@/assets/design-sketch.png";
 import copyrightIdea from "@/assets/copyright-idea.png";
@@ -73,7 +72,7 @@ function Nav() {
     <header className="sticky top-0 z-40 border-b border-white/5 bg-[#0d1a44]/85 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <a href="#" className="flex items-center gap-2">
-          <img src={logoAsset.url} alt="InnovatorsLab" className="h-8 w-auto sm:h-9" />
+          <img src="/WhatsApp_Image_2026-06-16_at_3.59.56_PM.jpeg" alt="InnovatorsLab" className="h-8 w-auto sm:h-9" />
           <span className="text-base font-semibold tracking-tight sm:text-lg">
             Innovators<span className="text-sky-300">Lab</span>
           </span>
@@ -412,7 +411,7 @@ function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-2">
-            <img src={logoAsset.url} alt="InnovatorsLab" className="h-8 w-auto" />
+            <img src="/WhatsApp_Image_2026-06-16_at_3.59.56_PM.jpeg" alt="InnovatorsLab" className="h-8 w-auto" />
             <span className="text-base font-semibold text-white">Innovators<span className="text-sky-300">Lab</span></span>
           </div>
           <p className="mt-3 max-w-xs text-white/60">From idea to intellectual property — design, prototyping, and IP protection for innovators.</p>
