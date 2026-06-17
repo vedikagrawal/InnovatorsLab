@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "InnovatorsLab" },
+      { name: "description", content: "Design Polish enhances your website with professional imagery and subtle background elements for a premium look." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "InnovatorsLab" },
+      { property: "og:description", content: "Design Polish enhances your website with professional imagery and subtle background elements for a premium look." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "InnovatorsLab" },
+      { name: "twitter:description", content: "Design Polish enhances your website with professional imagery and subtle background elements for a premium look." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/dff5d859-b286-48aa-bf86-ea61d062af28/id-preview-e1efd5b8--04e3cc15-a215-4960-bcfb-6c1beadf81e6.lovable.app-1781670989677.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/dff5d859-b286-48aa-bf86-ea61d062af28/id-preview-e1efd5b8--04e3cc15-a215-4960-bcfb-6c1beadf81e6.lovable.app-1781670989677.png" },
     ],
     links: [
       {
