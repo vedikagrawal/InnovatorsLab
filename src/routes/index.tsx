@@ -415,7 +415,7 @@ function ContactForm() {
             </div>
             <div>
               <label className={labelCls}>Phone Number {req}</label>
-              <input required type="tel" maxLength={20} className={inputCls} placeholder="+91 98765 43210" />
+              <input required type="tel" maxLength={10} minLength={10} pattern="[0-9]{10}" className={inputCls} placeholder="9876543210" />
             </div>
             <div className="sm:col-span-2">
               <label className={labelCls}>Email Address {req}</label>
