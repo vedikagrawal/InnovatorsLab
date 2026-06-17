@@ -77,6 +77,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "color-scheme", content: "light" },
       { title: "InnovatorsLab" },
       { name: "description", content: "Design Polish enhances your website with professional imagery and subtle background elements for a premium look." },
       { name: "author", content: "Lovable" },
