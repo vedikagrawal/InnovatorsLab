@@ -384,9 +384,9 @@ function ContactForm() {
             </div>
           </div>
 
-          <button type="submit" disabled={loading}
+          <button type="submit" disabled={loading || submitted}
             className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-gradient-to-r from-sky-500 to-blue-600 px-5 py-3 text-sm font-semibold text-white shadow transition hover:opacity-95 disabled:opacity-60">
-            {loading ? "Submitting..." : "Submit"}
+            {loading ? "Submitting..." : submitted ? "Submitted ✓" : "Submit"}
           </button>
 
           <p className="mt-3 flex items-center justify-center gap-1.5 text-center text-xs text-slate-500">
@@ -395,7 +395,15 @@ function ContactForm() {
           </p>
 
           {submitted && (
-            <p className="mt-4 rounded-md bg-emerald-50 px-3 py-2 text-center text-sm text-emerald-700">
+            <p
+              ref={(el) => {
+                if (el && !el.dataset.scrolled) {
+                  el.dataset.scrolled = "true";
+                  el.scrollIntoView({ behavior: "smooth", block: "center" });
+                }
+              }}
+              className="mt-4 rounded-md bg-emerald-50 px-3 py-2 text-center text-sm text-emerald-700"
+            >
               Thanks — we received your details and will be in touch within 12 hours.
             </p>
           )}
