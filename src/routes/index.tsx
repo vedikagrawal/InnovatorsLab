@@ -213,39 +213,38 @@ function Certificates() {
   const current = certificates[index];
 
   return (
-    <section className="relative overflow-hidden bg-slate-50 py-16 text-slate-900 sm:py-24">
-      <BlueprintBackdrop />
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#16307a] via-[#0f1f54] to-[#0a1024] py-16 sm:py-24">
       <div className="relative mx-auto max-w-3xl px-4 sm:px-6">
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.22em] text-sky-600">Our credentials</p>
-        <h2 className="mt-3 text-center text-3xl font-bold tracking-tight sm:text-4xl">Design Patents & Copyrights</h2>
-        <p className="mx-auto mt-4 max-w-2xl text-center text-slate-600">A few of the registrations we've secured for innovators like you.</p>
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">Our credentials</p>
+        <h2 className="mt-3 text-center text-3xl font-bold tracking-tight text-white sm:text-4xl">Design Patents & Copyrights</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-center text-white/65">A few of the registrations we've secured for innovators like you.</p>
 
         <div className="mt-12 flex items-center justify-center gap-3 sm:gap-6">
           <button
             type="button"
             onClick={goPrev}
             aria-label="Previous certificate"
-            className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-slate-300 bg-white text-slate-600 transition hover:border-sky-400 hover:text-sky-600"
+            className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/15 bg-white/5 text-white/70 transition hover:border-sky-300 hover:text-sky-300"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
 
-          <div className="w-full max-w-sm rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-6">
-            <div className="aspect-[3/4] overflow-hidden rounded-lg bg-slate-100">
+          <div className="w-full max-w-sm rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur sm:p-6">
+            <div className="aspect-[3/4] overflow-hidden rounded-lg bg-white">
               <img
                 src={current.src}
                 alt={current.title}
                 className="h-full w-full object-contain"
               />
             </div>
-            <p className="mt-4 text-center text-sm font-medium text-slate-800">{current.title}</p>
+            <p className="mt-4 text-center text-sm font-medium text-white/85">{current.title}</p>
           </div>
 
           <button
             type="button"
             onClick={goNext}
             aria-label="Next certificate"
-            className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-slate-300 bg-white text-slate-600 transition hover:border-sky-400 hover:text-sky-600"
+            className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/15 bg-white/5 text-white/70 transition hover:border-sky-300 hover:text-sky-300"
           >
             <ChevronRight className="h-5 w-5" />
           </button>
@@ -259,7 +258,7 @@ function Certificates() {
               onClick={() => setIndex(i)}
               aria-label={`Go to certificate ${i + 1}`}
               className={`h-2 rounded-full transition-all ${
-                i === index ? "w-6 bg-sky-500" : "w-2 bg-slate-300"
+                i === index ? "w-6 bg-sky-300" : "w-2 bg-white/25"
               }`}
             />
           ))}
