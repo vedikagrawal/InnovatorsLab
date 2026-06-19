@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import heroCad from "@/assets/hero-cad.png";
 import designSketch from "@/assets/design-sketch.png";
 import copyrightIdea from "@/assets/copyright-idea.png";
@@ -10,6 +10,8 @@ import {
   ChevronRight,
   Phone,
   Mail,
+  Linkedin,
+  Instagram,
   Lightbulb,
   ShieldCheck,
   Box,
@@ -203,9 +205,22 @@ const certificates = [
   { src: "/Copyright_certificate_1.jpg", title: "Copyright — SURAKSHAK DEVICE USER MANUAL" },
 ];
 
+// Preload every certificate image once, as soon as the app loads, so arrow
+// clicks never have to wait on a network fetch.
+function usePreloadAll(urls: string[]) {
+  useEffect(() => {
+    urls.forEach((url) => {
+      const img = new Image();
+      img.src = url;
+    });
+  }, [urls]);
+}
+
 function Certificates() {
   const [index, setIndex] = useState(0);
   const total = certificates.length;
+
+  usePreloadAll(certificates.map((c) => c.src));
 
   const goPrev = () => setIndex((i) => (i - 1 + total) % total);
   const goNext = () => setIndex((i) => (i + 1) % total);
@@ -499,6 +514,26 @@ function Footer() {
             <span className="text-base font-semibold text-white">Innovators<span className="text-sky-300">Lab</span></span>
           </div>
           <p className="mt-3 max-w-xs text-white/60">From idea to intellectual property — design, prototyping, and IP protection for innovators.</p>
+          <div className="mt-5 flex items-center gap-3">
+            <a
+              href="https://linkedin.com/company/innovatorslab"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="grid h-9 w-9 place-items-center rounded-full border border-white/15 bg-white/5 text-sky-300 transition hover:border-sky-300 hover:bg-sky-300/10"
+            >
+              <Linkedin className="h-4 w-4" />
+            </a>
+            <a
+              href="https://instagram.com/innovatorslab"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="grid h-9 w-9 place-items-center rounded-full border border-white/15 bg-white/5 text-sky-300 transition hover:border-sky-300 hover:bg-sky-300/10"
+            >
+              <Instagram className="h-4 w-4" />
+            </a>
+          </div>
         </div>
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/50">Contact</p>
