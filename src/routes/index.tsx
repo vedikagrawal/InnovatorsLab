@@ -415,9 +415,9 @@ function ContactForm() {
 }
 
 const certificates = [
-  { src: "/Design certificate 1.jpg", title: "Design Patent — NASAL CLIP FOR DRUG DELIVERY" },
-  { src: "/Design certificate 2.jpg", title: "Design Patent — MODIFIED ELEVATED PLUS MAZE WITH STAGGERED STAIRCASE FOR ANXIETY AND EXPLORATORY BEHAVIOR ASSESSMENT" },
-  { src: "/Design certificate 3.jpg", title: "Design Patent — MEASURING CYLINDER WITH INTEGRATED இந்திய SDG SENSOR AND DRAINAGE MECHANISM" },
+  { src: "/Design certificate 1.jpeg", title: "Design Patent — NASAL CLIP FOR DRUG DELIVERY" },
+  { src: "/Design certificate 2.jpeg", title: "Design Patent — MODIFIED ELEVATED PLUS MAZE WITH STAGGERED STAIRCASE FOR ANXIETY AND EXPLORATORY BEHAVIOR ASSESSMENT" },
+  { src: "/Design certificate 3.jpg", title: "Design Patent — MEASURING CYLINDER WITH INTEGRATED SENSOR AND DRAINAGE MECHANISM" },
   { src: "/Copyright certificate 1.jpg", title: "Copyright — SURAKSHAK DEVICE USER MANUAL" },
 ];
 
