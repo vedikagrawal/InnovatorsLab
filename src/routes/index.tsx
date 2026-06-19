@@ -62,9 +62,9 @@ function Index() {
       <Hero />
       <Process />
       <Services />
+      <Certificates />
       <HowItWorks />
       <ContactForm />
-      <Certificates />
       <Footer />
     </div>
   );
@@ -189,6 +189,79 @@ function Services() {
               <h3 className="mt-5 text-lg font-semibold">{s.title}</h3>
               <p className="mt-2 text-sm text-slate-600">{s.desc}</p>
             </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const certificates = [
+  { src: "/Design certificate 1.jpeg", title: "Design Patent — NASAL CLIP FOR DRUG DELIVERY" },
+  { src: "/Design certificate 2.jpeg", title: "Design Patent — MODIFIED ELEVATED PLUS MAZE WITH STAGGERED STAIRCASE FOR ANXIETY AND EXPLORATORY BEHAVIOR ASSESSMENT" },
+  { src: "/Design certificate 3.jpg", title: "Design Patent — MEASURING CYLINDER WITH INTEGRATED SENSOR AND DRAINAGE MECHANISM" },
+  { src: "/Copyright certificate 1.jpg", title: "Copyright — SURAKSHAK DEVICE USER MANUAL" },
+];
+
+function Certificates() {
+  const [index, setIndex] = useState(0);
+  const total = certificates.length;
+
+  const goPrev = () => setIndex((i) => (i - 1 + total) % total);
+  const goNext = () => setIndex((i) => (i + 1) % total);
+
+  const current = certificates[index];
+
+  return (
+    <section className="relative overflow-hidden bg-slate-50 py-16 text-slate-900 sm:py-24">
+      <BlueprintBackdrop />
+      <div className="relative mx-auto max-w-3xl px-4 sm:px-6">
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.22em] text-sky-600">Our credentials</p>
+        <h2 className="mt-3 text-center text-3xl font-bold tracking-tight sm:text-4xl">Design Patents & Copyrights</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-center text-slate-600">A few of the registrations we've secured for innovators like you.</p>
+
+        <div className="mt-12 flex items-center justify-center gap-3 sm:gap-6">
+          <button
+            type="button"
+            onClick={goPrev}
+            aria-label="Previous certificate"
+            className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-slate-300 bg-white text-slate-600 transition hover:border-sky-400 hover:text-sky-600"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+
+          <div className="w-full max-w-sm rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-6">
+            <div className="aspect-[3/4] overflow-hidden rounded-lg bg-slate-100">
+              <img
+                src={current.src}
+                alt={current.title}
+                className="h-full w-full object-contain"
+              />
+            </div>
+            <p className="mt-4 text-center text-sm font-medium text-slate-800">{current.title}</p>
+          </div>
+
+          <button
+            type="button"
+            onClick={goNext}
+            aria-label="Next certificate"
+            className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-slate-300 bg-white text-slate-600 transition hover:border-sky-400 hover:text-sky-600"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
+        </div>
+
+        <div className="mt-6 flex items-center justify-center gap-2">
+          {certificates.map((cert, i) => (
+            <button
+              key={cert.title}
+              type="button"
+              onClick={() => setIndex(i)}
+              aria-label={`Go to certificate ${i + 1}`}
+              className={`h-2 rounded-full transition-all ${
+                i === index ? "w-6 bg-sky-500" : "w-2 bg-slate-300"
+              }`}
+            />
           ))}
         </div>
       </div>
@@ -411,79 +484,6 @@ function ContactForm() {
             </p>
           )}
         </form>
-      </div>
-    </section>
-  );
-}
-
-const certificates = [
-  { src: "/Design certificate 1.jpeg", title: "Design Patent — NASAL CLIP FOR DRUG DELIVERY" },
-  { src: "/Design certificate 2.jpeg", title: "Design Patent — MODIFIED ELEVATED PLUS MAZE WITH STAGGERED STAIRCASE FOR ANXIETY AND EXPLORATORY BEHAVIOR ASSESSMENT" },
-  { src: "/Design certificate 3.jpg", title: "Design Patent — MEASURING CYLINDER WITH INTEGRATED SENSOR AND DRAINAGE MECHANISM" },
-  { src: "/Copyright certificate 1.jpg", title: "Copyright — SURAKSHAK DEVICE USER MANUAL" },
-];
-
-function Certificates() {
-  const [index, setIndex] = useState(0);
-  const total = certificates.length;
-
-  const goPrev = () => setIndex((i) => (i - 1 + total) % total);
-  const goNext = () => setIndex((i) => (i + 1) % total);
-
-  const current = certificates[index];
-
-  return (
-    <section className="relative overflow-hidden bg-slate-50 py-16 text-slate-900 sm:py-24">
-      <BlueprintBackdrop />
-      <div className="relative mx-auto max-w-3xl px-4 sm:px-6">
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.22em] text-sky-600">Our credentials</p>
-        <h2 className="mt-3 text-center text-3xl font-bold tracking-tight sm:text-4xl">Design Patents & Copyrights</h2>
-        <p className="mx-auto mt-4 max-w-2xl text-center text-slate-600">A few of the registrations we've secured for innovators like you.</p>
-
-        <div className="mt-12 flex items-center justify-center gap-3 sm:gap-6">
-          <button
-            type="button"
-            onClick={goPrev}
-            aria-label="Previous certificate"
-            className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-slate-300 bg-white text-slate-600 transition hover:border-sky-400 hover:text-sky-600"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-
-          <div className="w-full max-w-sm rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-6">
-            <div className="aspect-[3/4] overflow-hidden rounded-lg bg-slate-100">
-              <img
-                src={current.src}
-                alt={current.title}
-                className="h-full w-full object-contain"
-              />
-            </div>
-            <p className="mt-4 text-center text-sm font-medium text-slate-800">{current.title}</p>
-          </div>
-
-          <button
-            type="button"
-            onClick={goNext}
-            aria-label="Next certificate"
-            className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-slate-300 bg-white text-slate-600 transition hover:border-sky-400 hover:text-sky-600"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
-        </div>
-
-        <div className="mt-6 flex items-center justify-center gap-2">
-          {certificates.map((cert, i) => (
-            <button
-              key={cert.title}
-              type="button"
-              onClick={() => setIndex(i)}
-              aria-label={`Go to certificate ${i + 1}`}
-              className={`h-2 rounded-full transition-all ${
-                i === index ? "w-6 bg-sky-500" : "w-2 bg-slate-300"
-              }`}
-            />
-          ))}
-        </div>
       </div>
     </section>
   );
