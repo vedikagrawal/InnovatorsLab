@@ -197,10 +197,10 @@ function Services() {
 }
 
 const certificates = [
-  { src: "/Design certificate 1.jpeg", title: "Design Patent — NASAL CLIP FOR DRUG DELIVERY" },
-  { src: "/Design certificate 2.jpeg", title: "Design Patent — MODIFIED ELEVATED PLUS MAZE WITH STAGGERED STAIRCASE FOR ANXIETY AND EXPLORATORY BEHAVIOR ASSESSMENT" },
-  { src: "/Design certificate 3.jpg", title: "Design Patent — MEASURING CYLINDER WITH INTEGRATED SENSOR AND DRAINAGE MECHANISM" },
-  { src: "/Copyright certificate 1.jpg", title: "Copyright — SURAKSHAK DEVICE USER MANUAL" },
+  { src: "/Design_certificate_1.jpeg", title: "Design Patent — NASAL CLIP FOR DRUG DELIVERY" },
+  { src: "/Design_certificate_2.jpeg", title: "Design Patent — MODIFIED ELEVATED PLUS MAZE WITH STAGGERED STAIRCASE FOR ANXIETY AND EXPLORATORY BEHAVIOR ASSESSMENT" },
+  { src: "/Design_certificate_3.jpg", title: "Design Patent — MEASURING CYLINDER WITH INTEGRATED SENSOR AND DRAINAGE MECHANISM" },
+  { src: "/Copyright_certificate_1.jpg", title: "Copyright — SURAKSHAK DEVICE USER MANUAL" },
 ];
 
 function Certificates() {
@@ -219,32 +219,33 @@ function Certificates() {
         <h2 className="mt-3 text-center text-3xl font-bold tracking-tight text-white sm:text-4xl">Design Patents & Copyrights</h2>
         <p className="mx-auto mt-4 max-w-2xl text-center text-white/65">A few of the registrations we've secured for innovators like you.</p>
 
+        {/* Fixed-height row keeps the arrows perfectly still as the image/title change */}
         <div className="mt-12 flex items-center justify-center gap-3 sm:gap-6">
           <button
             type="button"
             onClick={goPrev}
             aria-label="Previous certificate"
-            className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/15 bg-white/5 text-white/70 transition hover:border-sky-300 hover:text-sky-300"
+            className="grid h-11 w-11 shrink-0 place-items-center self-center rounded-full border border-white/15 bg-white/5 text-white/70 transition hover:border-sky-300 hover:text-sky-300"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
 
-          <div className="w-full max-w-sm rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur sm:p-6">
-            <div className="aspect-[3/4] overflow-hidden rounded-lg bg-white">
+          <div className="flex w-full max-w-xs flex-col items-center">
+            <div className="flex h-[360px] w-full items-center justify-center sm:h-[420px]">
               <img
                 src={current.src}
                 alt={current.title}
-                className="h-full w-full object-contain"
+                className="max-h-full max-w-full object-contain"
               />
             </div>
-            <p className="mt-4 text-center text-sm font-medium text-white/85">{current.title}</p>
+            <p className="mt-4 h-12 text-center text-sm font-medium text-white/85">{current.title}</p>
           </div>
 
           <button
             type="button"
             onClick={goNext}
             aria-label="Next certificate"
-            className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/15 bg-white/5 text-white/70 transition hover:border-sky-300 hover:text-sky-300"
+            className="grid h-11 w-11 shrink-0 place-items-center self-center rounded-full border border-white/15 bg-white/5 text-white/70 transition hover:border-sky-300 hover:text-sky-300"
           >
             <ChevronRight className="h-5 w-5" />
           </button>
