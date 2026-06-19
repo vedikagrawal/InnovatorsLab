@@ -62,6 +62,7 @@ function Index() {
       <Services />
       <HowItWorks />
       <ContactForm />
+      <Certificates />
       <Footer />
     </div>
   );
@@ -409,6 +410,56 @@ function ContactForm() {
           )}
         </form>
       </div>
+    </section>
+  );
+}
+
+const certificates = [
+  { src: "/Design certificate 1.jpg", title: "Design Patent — NASAL CLIP FOR DRUG DELIVERY" },
+  { src: "/Design certificate 2.jpg", title: "Design Patent — MODIFIED ELEVATED PLUS MAZE WITH STAGGERED STAIRCASE FOR ANXIETY AND EXPLORATORY BEHAVIOR ASSESSMENT" },
+  { src: "/Design certificate 3.jpg", title: "Design Patent — MEASURING CYLINDER WITH INTEGRATED இந்திய SDG SENSOR AND DRAINAGE MECHANISM" },
+  { src: "/Copyright certificate 1.jpg", title: "Copyright — SURAKSHAK DEVICE USER MANUAL" },
+];
+
+function Certificates() {
+  const loop = [...certificates, ...certificates];
+  return (
+    <section className="relative overflow-hidden bg-[#070d1f] py-16 sm:py-20">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">Our credentials</p>
+        <h2 className="mt-3 text-center text-3xl font-bold tracking-tight sm:text-4xl">Design Patents & Copyrights</h2>
+      </div>
+
+      <div className="relative mt-12 overflow-hidden">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#070d1f] to-transparent sm:w-24" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#070d1f] to-transparent sm:w-24" />
+
+        <div className="flex w-max animate-[certScroll_28s_linear_infinite] gap-6 px-4">
+          {loop.map((cert, i) => (
+            <div
+              key={`${cert.title}-${i}`}
+              className="w-44 shrink-0 rounded-xl border border-white/10 bg-white/5 p-3 sm:w-52"
+            >
+              <div className="aspect-[3/4] overflow-hidden rounded-lg bg-white">
+                <img
+                  src={cert.src}
+                  alt={cert.title}
+                  loading="lazy"
+                  className="h-full w-full object-contain"
+                />
+              </div>
+              <p className="mt-3 text-center text-xs font-medium text-white/70 sm:text-sm">{cert.title}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <style>{`
+        @keyframes certScroll {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+      `}</style>
     </section>
   );
 }
