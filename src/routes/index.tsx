@@ -238,7 +238,7 @@ function Certificates() {
                 className="max-h-full max-w-full object-contain"
               />
             </div>
-            <p className="mt-4 h-12 text-center text-sm font-medium text-white/85">{current.title}</p>
+            <p className="mt-4 h-[72px] text-center text-sm font-medium text-white/85">{current.title}</p>
           </div>
 
           <button
@@ -251,7 +251,7 @@ function Certificates() {
           </button>
         </div>
 
-        <div className="mt-6 flex items-center justify-center gap-2">
+        <div className="mt-8 flex items-center justify-center gap-2">
           {certificates.map((cert, i) => (
             <button
               key={cert.title}
