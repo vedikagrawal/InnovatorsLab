@@ -520,18 +520,25 @@ function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="grid h-9 w-9 place-items-center rounded-full border border-white/15 bg-white/5 text-sky-300 transition hover:border-sky-300 hover:bg-sky-300/10"
+              className="grid h-12 w-12 place-items-center rounded-full bg-[#0A66C2] text-white transition hover:opacity-90"
             >
-              <Linkedin className="h-4 w-4" />
+              <Linkedin className="h-6 w-6" />
             </a>
             <a
               href="https://instagram.com/innovatorslab"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="grid h-9 w-9 place-items-center rounded-full border border-white/15 bg-white/5 text-sky-300 transition hover:border-sky-300 hover:bg-sky-300/10"
+              className="grid h-12 w-12 place-items-center rounded-full bg-gradient-to-br from-[#feda75] via-[#d62976] to-[#4f5bd5] text-white transition hover:opacity-90"
             >
-              <Instagram className="h-4 w-4" />
+              <Instagram className="h-6 w-6" />
+            </a>
+            <a
+              href="mailto:innovatorslab1@gmail.com"
+              aria-label="Email"
+              className="grid h-12 w-12 place-items-center rounded-full bg-[#EA4335] text-white transition hover:opacity-90"
+            >
+              <Mail className="h-6 w-6" />
             </a>
           </div>
         </div>
