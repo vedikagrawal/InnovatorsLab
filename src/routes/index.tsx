@@ -169,13 +169,77 @@ function Process() {
 }
 
 const services = [
-  { icon: PenTool, title: "CAD Design Development", desc: "Precision 3D & 2D models built to spec." },
-  { icon: Atom, title: "Prototype Development", desc: "Tangible prototypes to validate your idea." },
-  { icon: Lightbulb, title: "Idea Development", desc: "Expert-guided refinement with industry experience." },
-  { icon: FilePenLine, title: "Design Filing", desc: "Register the unique look of your product." },
-  { icon: Copyright, title: "Copyright Filing", desc: "Protect your original creative works." },
-  { icon: Stamp, title: "Patent Filing", desc: "End-to-end patent support for your invention." },
+  {
+    icon: PenTool,
+    title: "CAD Design Development",
+    desc: "Precision 3D & 2D models built to spec.",
+    detail: "A 4-5 year experienced, registered CAD designer will create your product's 3D and 2D models. After your review and any requested modifications, the design is finalized and prepared for the next stage.",
+  },
+  {
+    icon: Atom,
+    title: "Prototype Development",
+    desc: "Tangible prototypes to validate your idea.",
+    detail: "This service transforms your validated idea into a hard, tangible hardware device. We use 3D printing and precision engineering to create, prepare, and deliver the final device directly to your specified address.",
+  },
+  {
+    icon: Lightbulb,
+    title: "Idea Development",
+    desc: "Expert-guided refinement with industry experience.",
+    detail: "Work with registered partners and experts from various industries. They will provide guidance and expert-led refinement throughout the entire idea development process to help you transform concepts into a viable product plan.",
+  },
+  {
+    icon: FilePenLine,
+    title: "Design Filing",
+    desc: "Register the unique look of your product.",
+    detail: "Leverage the expertise of our registered partners with 4 to 5 years of experience to register and protect the unique aesthetic look of your innovative product.",
+  },
+  {
+    icon: Copyright,
+    title: "Copyright Filing",
+    desc: "Protect your original creative works.",
+    detail: "Our experts will help you protect your original creative works, from artistic designs to written documentation, ensuring your intellectual property remains yours.",
+  },
+  {
+    icon: Stamp,
+    title: "Patent Filing",
+    desc: "End-to-end patent support for your invention.",
+    detail: "From initial application to final approval, receive end-to-end support to patent your invention, securing its unique functionality and giving you commercial protection.",
+  },
 ];
+
+function ServiceCard({ s }: { s: (typeof services)[number] }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+      onFocus={() => setOpen(true)}
+      onBlur={() => setOpen(false)}
+      tabIndex={0}
+      className="group rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-0.5 hover:border-sky-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-sky-300"
+    >
+      <div className="grid h-11 w-11 place-items-center rounded-xl bg-sky-50 text-sky-600"><s.icon className="h-5 w-5" /></div>
+      <h3 className="mt-5 text-lg font-semibold">{s.title}</h3>
+      <p className="mt-2 text-sm text-slate-600">{s.desc}</p>
+
+      <div
+        className="grid overflow-hidden transition-[grid-template-rows] duration-300 ease-out"
+        style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
+      >
+        <div className="min-h-0">
+          <p className="mt-3 border-t border-slate-100 pt-3 text-sm leading-relaxed text-slate-600">{s.detail}</p>
+          <a
+            href="#contact"
+            className="mt-4 inline-flex items-center gap-1.5 rounded-md bg-sky-600 px-4 py-2 text-xs font-semibold text-white transition hover:bg-sky-700"
+          >
+            Book a Free Call <ArrowRight className="h-3.5 w-3.5" />
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function Services() {
   return (
@@ -184,19 +248,17 @@ function Services() {
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <p className="text-center text-xs font-semibold uppercase tracking-[0.22em] text-sky-600">What we do</p>
         <h2 className="mt-3 text-center text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Our Services</h2>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <p className="mx-auto mt-4 max-w-xl text-center text-sm text-slate-500">Hover over a service to see how we deliver it.</p>
+        <div className="mt-12 grid items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (
-            <div key={s.title} className="rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-0.5 hover:border-sky-300 hover:shadow-lg">
-              <div className="grid h-11 w-11 place-items-center rounded-xl bg-sky-50 text-sky-600"><s.icon className="h-5 w-5" /></div>
-              <h3 className="mt-5 text-lg font-semibold">{s.title}</h3>
-              <p className="mt-2 text-sm text-slate-600">{s.desc}</p>
-            </div>
+            <ServiceCard key={s.title} s={s} />
           ))}
         </div>
       </div>
     </section>
   );
 }
+
 
 const certificates = [
   { src: "/Design_certificate_1.jpeg", title: "Design Patent — NASAL CLIP FOR DRUG DELIVERY" },
@@ -509,14 +571,14 @@ function Footer() {
     <footer className="bg-[#070d1f] py-12 text-sm text-white/70">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 md:grid-cols-3">
         <div>
-          <div className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2">
             <img src="/WhatsApp_Image_2026-06-16_at_3.59.56_PM.jpeg" alt="InnovatorsLab" className="h-8 w-auto" />
             <span className="text-base font-semibold text-white">Innovators<span className="text-sky-300">Lab</span></span>
-          </div>
+          </a>
           <p className="mt-3 max-w-xs text-white/60">From idea to intellectual property — design, prototyping, and IP protection for innovators.</p>
           <div className="mt-5 flex items-center gap-3">
             <a
-              href="https://linkedin.com/company/innovatorslab"
+              href="https://www.linkedin.com/company/innovatorslab1/?viewAsMember=true"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -525,7 +587,7 @@ function Footer() {
               <Linkedin className="h-6 w-6" />
             </a>
             <a
-              href="https://instagram.com/innovatorslab"
+              href="https://www.instagram.com/innovatorslab.official"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
