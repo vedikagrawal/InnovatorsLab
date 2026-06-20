@@ -532,7 +532,7 @@ function ContactForm() {
               </div>
             )}
             <div className="sm:col-span-2">
-              <label className={labelCls}>Brief Description</label>
+              <label className={labelCls}>Brief Description (Optional) </label>
               <textarea name="description" rows={4} maxLength={1000} value={formData.description} onChange={handleChange} className={inputCls} placeholder="Tell us about your idea or project..." />
             </div>
           </div>
