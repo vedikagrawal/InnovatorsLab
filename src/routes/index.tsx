@@ -248,7 +248,7 @@ function Services() {
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <p className="text-center text-xs font-semibold uppercase tracking-[0.22em] text-sky-600">What we do</p>
         <h2 className="mt-3 text-center text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Our Services</h2>
-        <p className="mx-auto mt-4 max-w-xl text-center text-sm text-slate-500">Hover over a service to see how we deliver it.</p>
+        <p className="mx-auto mt-4 max-w-xl text-center text-sm text-slate-500">Tap or hover on a service to see how we deliver it.</p>
         <div className="mt-12 grid items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (
             <ServiceCard key={s.title} s={s} />
@@ -413,7 +413,36 @@ function HowItWorks() {
 }
 
 const INDUSTRY_OPTIONS = [
-  "AI", "Automobile", "Aerospace", "Pharmaceutical", "Health Care", "Other (Please Specify)",
+  "Aerospace & Defense",
+  "Agriculture & AgriTech",
+  "Artificial Intelligence (AI)",
+  "Automotive & EV",
+  "Beauty & Personal Care",
+  "Construction & Civil Engineering",
+  "Consumer Products & Product Innovation",
+  "Defense Technology",
+  "Education & EdTech",
+  "Electronics & Embedded Systems",
+  "FinTech & Financial Services",
+  "FMCG & Consumer Goods",
+  "Food & Beverage",
+  "Hardware Products",
+  "Healthcare & Medical Devices",
+  "IoT & Smart Devices",
+  "Logistics & Supply Chain",
+  "Manufacturing & Industrial Equipment",
+  "Mobility & Transportation",
+  "Packaging & Sustainable Materials",
+  "Pharmaceutical & Biotechnology",
+  "Renewable Energy & CleanTech",
+  "Research & Academia",
+  "Robotics & Automation",
+  "Smart Home & Home Appliances",
+  "Software / SaaS",
+  "Sports & Fitness",
+  "Textile & Apparel",
+  "Water & Environmental Solutions",
+  "Other (Please Specify)",
 ];
 
 const SERVICE_OPTIONS = [
