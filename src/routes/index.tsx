@@ -31,10 +31,10 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "InnovatorsLab — Think It. Build It. Protect It." },
-      { name: "description", content: "From idea to intellectual property — design, prototyping, and IP protection for innovators." },
-      { property: "og:title", content: "InnovatorsLab" },
-      { property: "og:description", content: "From idea to intellectual property — design, prototyping, and IP protection for innovators." },
+      { title: "Patent, Copyright & Design Registration Services | InnovatorsLab" },
+      { name: "description", content: "InnovatorsLab provides patent registration, copyright filing, design registration, CAD design, and prototype development for startups, researchers, and innovators."},
+      { property: "og:title", content: "InnovatorsLab — Patent, Copyright & Design Registration Services"  },
+      { property: "og:description", content: "InnovatorsLab provides patent registration, copyright filing, design registration, CAD design, and prototype development for startups, researchers, and innovators."},
     ],
   }),
   component: Index,
