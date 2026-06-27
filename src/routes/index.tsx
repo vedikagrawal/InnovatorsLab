@@ -31,10 +31,10 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Patent, Copyright & Design Registration Services | InnovatorsLab" },
-      { name: "description", content: "InnovatorsLab provides patent registration, copyright filing, design registration, CAD design, and prototype development for startups, researchers, and innovators."},
-      { property: "og:title", content: "InnovatorsLab — Patent, Copyright & Design Registration Services"  },
-      { property: "og:description", content: "InnovatorsLab provides patent registration, copyright filing, design registration, CAD design, and prototype development for startups, researchers, and innovators."},
+      { title: "Patent, Copyright & Design Registration Services in India | InnovatorsLab" },
+      { name: "description", content: "InnovatorsLab provides patent registration, copyright filing, design registration, CAD design, and prototype development for startups, researchers, and innovators across India." },
+      { property: "og:title", content: "InnovatorsLab — Patent, Copyright & Design Registration Services" },
+      { property: "og:description", content: "InnovatorsLab provides patent registration, copyright filing, design registration, CAD design, and prototype development for startups, researchers, and innovators across India." },
     ],
   }),
   component: Index,
@@ -205,6 +205,12 @@ const services = [
     desc: "End-to-end patent support for your invention.",
     detail: "From initial application to final approval, receive end-to-end support to patent your invention, securing its unique functionality and giving you commercial protection.",
   },
+  {
+    icon: ShieldCheck,
+    title: "Trademark Registration",
+    desc: "Protect your brand name, logo, and identity.",
+    detail: "Our registered partners handle end-to-end trademark registration — from clearance search to application filing and examination support — to secure your brand name, logo, and identity against unauthorized use.",
+  },
 ];
 
 function ServiceCard({ s }: { s: (typeof services)[number] }) {
@@ -248,7 +254,7 @@ function Services() {
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <p className="text-center text-xs font-semibold uppercase tracking-[0.22em] text-sky-600">What we do</p>
         <h2 className="mt-3 text-center text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Our Services</h2>
-        <p className="mx-auto mt-4 max-w-xl text-center text-sm text-slate-500">Tap on a service to see how we deliver it.</p>
+        <p className="mx-auto mt-4 max-w-xl text-center text-sm text-slate-500">Tap or hover on a service to see how we deliver it.</p>
         <div className="mt-12 grid items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (
             <ServiceCard key={s.title} s={s} />
@@ -447,7 +453,7 @@ const INDUSTRY_OPTIONS = [
 
 const SERVICE_OPTIONS = [
   "CAD Design Development", "Prototype Development", "Idea Development",
-  "Design Filing", "Copyright Filing", "Patent Filing",
+  "Design Filing", "Copyright Filing", "Patent Filing", "Trademark Registration",
 ];
 
 // Google Apps Script URL
